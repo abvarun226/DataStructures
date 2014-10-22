@@ -2,19 +2,18 @@ package com.yahoo.test;
 
 class Link {
 	public int data1;
-	public int data2;
 	public Link nextLink;
 	
-	public Link(int d1, int d2) {
+	public Link(int d1) {
 		data1 = d1;
-		data2 = d2;
 	}
 	
 	public void printOut() {
-		System.out.println("Data1 = " + data1 + " and Data2 = " + data2);
+		System.out.println("Data = " + data1);
 	}
 	
 }
+
 
 class LinkList {
 	private Link first;
@@ -28,9 +27,9 @@ class LinkList {
 		return first==null;
 	}
 	
-	public void insert(int d1, int d2) {
+	public void insert(int d1) {
 		length++;
-		Link link = new Link(d1, d2);
+		Link link = new Link(d1);
 		link.nextLink = first;
 		first = link;
 	}
@@ -62,14 +61,20 @@ class LinkList {
 }
 public class MyLinkedList {
 
+	/*
+	 * Linked List Basics 
+	 * http://cslibrary.stanford.edu/103/LinkedListBasics.pdf
+	 * 
+	 */
+	
 	public static void main(String[] args) {
 		LinkList list = new LinkList();
 		
 		System.out.println("Is List empty : " + list.isEmpty() + "\n");
-		list.insert(1,2);
-		list.insert(3,4);
-		list.insert(5,6);
-		list.insert(7,8);
+		list.insert(1);
+		list.insert(3);
+		list.insert(5);
+		list.insert(7);
 		
 		System.out.println("Length of List : " + list.length());
 		
