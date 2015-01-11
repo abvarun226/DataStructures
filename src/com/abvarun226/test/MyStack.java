@@ -5,14 +5,14 @@ package com.abvarun226.test;
  */
 
 class Stack {
-    int stck[] = new int[10];
+    int[] stck = new int[10];
     int tos;
 
-    Stack() {
+    public Stack() {
         tos = -1;
     }
 
-    void push(int item) {
+    public void push(int item) {
         if(tos == 9) {
             System.out.println("Stack is full");
         } else {
@@ -20,7 +20,7 @@ class Stack {
         }
     }
 
-    int pop() {
+    public int pop() {
         if(tos < 0) {
             System.out.println("Stack underflow");
             return 0;
@@ -31,5 +31,17 @@ class Stack {
 }
 
 public class MyStack {
+    public static void main(String... args) {
+        Stack myStack1 = new Stack();
+        myStack1.push(1);
+        myStack1.push(2);
+        myStack1.push(3);
 
+        System.out.println("Pop element from Stack : " + myStack1.pop());
+        System.out.println("Pop element from Stack : " + myStack1.pop());
+        System.out.println("Pop element from Stack : " + myStack1.pop());
+
+        System.out.println("Pop element from Stack : " + myStack1.pop());
+
+    }
 }
