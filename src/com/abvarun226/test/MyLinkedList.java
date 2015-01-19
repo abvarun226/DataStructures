@@ -4,11 +4,11 @@ package com.abvarun226.test;
  * Created by bharghav on 1/11/15.
  */
 
-class Link {
-    public int data1;
+class Link<T> {
+    public T data1;
     public Link nextLink;
 
-    public Link(int d1) {
+    public Link(T d1) {
         data1 = d1;
     }
 
@@ -19,8 +19,8 @@ class Link {
 }
 
 
-class LinkList {
-    private Link first;
+class LinkList<T> {
+    private Link<T> first;
     public static int length=0;
 
     public LinkList() {
@@ -31,7 +31,7 @@ class LinkList {
         return first==null;
     }
 
-    public void insert(int d1) {
+    public void insert(T d1) {
         length++;
         Link link = new Link(d1);
         link.nextLink = first;
@@ -72,7 +72,7 @@ public class MyLinkedList {
 	 */
 
     public static void main(String[] args) {
-        LinkList list = new LinkList();
+        LinkList<Integer> list = new LinkList<Integer>();
 
         System.out.println("Is List empty : " + list.isEmpty() + "\n");
         list.insert(1);
@@ -101,6 +101,38 @@ public class MyLinkedList {
         System.out.println("Length of List : " + list.length());
         Link temp4 = list.delete();
         System.out.println("Length of List : " + list.length());
+
+        System.out.println("\n-----------------------------------------\n");
+
+        LinkList<String> list1 = new LinkList<String>();
+
+        System.out.println("Is List empty : " + list1.isEmpty() + "\n");
+        list1.insert("one");
+        list1.insert("two");
+        list1.insert("three");
+        list1.insert("four");
+
+        System.out.println("Length of List : " + list1.length());
+
+        list1.printList();
+
+        Link temp5 = list1.delete();
+        System.out.print("Deleted Link : ");
+        temp5.printOut();
+        System.out.println("Length of List : " + list1.length());
+
+        System.out.println("\nIs List empty : " + list1.isEmpty() + "\n");
+
+        list1.printList();
+
+        list1.delete();
+        System.out.println("Length of List : " + list1.length());
+        list1.delete();
+        System.out.println("Length of List : " + list1.length());
+        list1.delete();
+        System.out.println("Length of List : " + list1.length());
+        list1.delete();
+        System.out.println("Length of List : " + list1.length());
     }
 
 }
