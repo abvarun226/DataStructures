@@ -33,7 +33,7 @@ class LinkList<T> {
 
     public void insert(T d1) {
         length++;
-        Link link = new Link(d1);
+        Link<T> link = new Link<T>(d1);
         link.nextLink = first;
         first = link;
     }
@@ -44,7 +44,7 @@ class LinkList<T> {
             return null;
         }
         length--;
-        Link temp = first;
+        Link<T> temp = first;
         first = first.nextLink;
         return temp;
     }
@@ -54,7 +54,7 @@ class LinkList<T> {
     }
 
     public void printList() {
-        Link currentLink = first;
+        Link<T> currentLink = first;
         System.out.println("List: ");
         while(currentLink != null) {
             currentLink.printOut();
