@@ -48,7 +48,6 @@ public class MyStack {
         System.out.println("Pop element from Stack : " + myStack1.pop());
         System.out.println("Pop element from Stack : " + myStack1.pop());
         System.out.println("Pop element from Stack : " + myStack1.pop());
-
         System.out.println("Pop element from Stack : " + myStack1.pop());
 
     }
